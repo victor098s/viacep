@@ -3,6 +3,7 @@ import "./App.css";
 import Cep from "./assets/Pages/Buscarcep/Cep";
 import Home from "./assets/Pages/Home/Home";
 import Frete from "./assets/Pages/Frete/frete";
+import Contato from "./assets/Pages/Contato/Contato";
 
 function App() {
   return (
@@ -26,6 +27,12 @@ function App() {
         >
           Frete
         </NavLink>
+        <NavLink
+          to="/contato"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Contato
+        </NavLink>
       </div>
 
       <main className="content">
@@ -33,7 +40,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/buscarcep" element={<Cep />} />
           <Route path="/frete" element={<Frete />} />
-         
+          <Route path="/contato" element={<Contato />} />
         </Routes>
       </main>
     </BrowserRouter>
