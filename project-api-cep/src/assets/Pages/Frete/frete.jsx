@@ -8,16 +8,41 @@ export default function Frete() {
   const [largura, setLargura] = useState("");
   const [comprimento, setComprimento] = useState("");
   const [resultado, setResultado] = useState(null);
+  const [erros, setErros] = useState({});
 
-  const calcularFrete = () => {
-    if (!origem || !destino || !altura || !largura || !comprimento) {
-      alert("Preencha todos os campos!");
-      return;
+  const validar = () => {
+    let novosErros = {};
+
+    if (!origem) novosErros.origem = "Campo obrigatório";
+    if (!destino) novosErros.destino = "Campo obrigatório";
+
+    if (!altura) {
+      novosErros.altura = "Campo obrigatório";
+    } else if (altura < 1 || altura > 100) {
+      novosErros.altura = "Altura deve ser entre 1 e 100 cm";
     }
 
-    // Simulação de cálculo (base + volume + distância fictícia)
+    if (!largura) {
+      novosErros.largura = "Campo obrigatório";
+    } else if (largura < 8 || largura > 100) {
+      novosErros.largura = "Largura deve ser entre 8 e 100 cm";
+    }
+
+    if (!comprimento) {
+      novosErros.comprimento = "Campo obrigatório";
+    } else if (comprimento < 13 || comprimento > 100) {
+      novosErros.comprimento = "Comprimento deve ser entre 13 e 100 cm";
+    }
+
+    setErros(novosErros);
+    return Object.keys(novosErros).length === 0;
+  };
+
+  const calcularFrete = () => {
+    if (!validar()) return;
+
     const volume = altura * largura * comprimento;
-    const distancia = Math.abs(origem - destino) || 500; // fallback
+    const distancia = Math.abs(origem - destino) || 500;
 
     const preco = (volume / 5000) + (distancia / 100);
 
@@ -33,21 +58,25 @@ export default function Frete() {
         <div className={styles.inputGroup}>
           <label>Origem</label>
           <input
+            className={erros.origem ? styles.inputErro : ""}
             type="number"
             placeholder="Informe o CEP"
             value={origem}
             onChange={(e) => setOrigem(e.target.value)}
           />
+          {erros.origem && <span className={styles.erro}>{erros.origem}</span>}
         </div>
 
         <div className={styles.inputGroup}>
           <label>Destino</label>
           <input
+            className={erros.destino ? styles.inputErro : ""}
             type="number"
             placeholder="Informe o CEP"
             value={destino}
             onChange={(e) => setDestino(e.target.value)}
           />
+          {erros.destino && <span className={styles.erro}>{erros.destino}</span>}
         </div>
       </div>
 
@@ -55,31 +84,39 @@ export default function Frete() {
         <div className={styles.inputGroup}>
           <label>Altura (A)</label>
           <input
+            className={erros.altura ? styles.inputErro : ""}
             type="number"
             placeholder="Entre 1 e 100 cm"
             value={altura}
             onChange={(e) => setAltura(e.target.value)}
           />
+          {erros.altura && <span className={styles.erro}>{erros.altura}</span>}
         </div>
 
         <div className={styles.inputGroup}>
           <label>Largura (L)</label>
           <input
+            className={erros.largura ? styles.inputErro : ""}
             type="number"
             placeholder="Entre 8 e 100 cm"
             value={largura}
             onChange={(e) => setLargura(e.target.value)}
           />
+          {erros.largura && <span className={styles.erro}>{erros.largura}</span>}
         </div>
 
         <div className={styles.inputGroup}>
           <label>Comprimento (C)</label>
           <input
+            className={erros.comprimento ? styles.inputErro : ""}
             type="number"
             placeholder="Entre 13 e 100 cm"
             value={comprimento}
             onChange={(e) => setComprimento(e.target.value)}
           />
+          {erros.comprimento && (
+            <span className={styles.erro}>{erros.comprimento}</span>
+          )}
         </div>
       </div>
 
