@@ -1,0 +1,85 @@
+.container {
+  min-height: 60vh;
+  width: 400px;
+  border-radius: 12px;
+  background-color: rgb(0, 23, 70);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f0f0f0;
+  box-shadow: 0px 10px 35px 0px rgba(0, 0, 0, 0.2);
+  border-top: 7px solid #90c4ff;
+}
+
+.titulo {
+  text-align: center;
+  margin-top: 18px;
+}
+
+.inputSection {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+input {
+  width: 170px;
+  height: 40px;
+  border-radius: 8px;
+  border: 2px solid rgb(70, 193, 255);
+  outline: none;
+  padding-left: 5px;
+}
+
+input:focus {
+  outline: 3px solid rgba(138, 159, 255, 0.755);
+}
+
+input::placeholder {
+  color: #2f2e2e;
+}
+
+.result span {
+  color: #b7cfff;
+}
+
+.btn {
+  width: 90px;
+  height: 45px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(56, 99, 255);
+  color: #f0f0f0;
+  font-size: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+.result {
+  padding: 1rem;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: rgba(58, 99, 255);
+  cursor: pointer;
+  transform: scale(1.12);
+}
+
+.btn:disabled {
+  background-color: #b3b3b3;
+}
+
+.btnReset {
+  width: 200px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(56, 99, 255);
+  color: #f0f0f0;
+}

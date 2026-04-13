@@ -1,0 +1,29 @@
+.navBar {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+    background-color: rgb(0, 22, 61);
+  margin-bottom: 20px;
+}
+
+.navBar a {
+  text-decoration: none;
+  color: #f0f0f0;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navBar a:hover{
+    background-color: rgba(30, 51, 154, 0.538);
+  color: #c0c0ff;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 75vh;
+}
