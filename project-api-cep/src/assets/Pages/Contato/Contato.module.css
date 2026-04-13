@@ -1,0 +1,108 @@
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.titulo {
+    color: #0099cc;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.subtitulo {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.subtitulo span {
+    color: #0099cc;
+    font-weight: bold;
+}
+
+.busca {
+    position: relative;
+    margin: 20px auto 30px;
+    max-width: 600px;
+}
+
+.busca input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.iconBusca {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.linkPrincipal {
+    margin: 25px 0 40px;
+}
+
+.linkPrincipal span {
+    color: #0099cc;
+    cursor: pointer;
+}
+
+.opcoes {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    max-width: 350px;
+    text-align: left;
+}
+
+.card svg {
+    color: #0099cc;
+}
+
+.card span {
+    color: #0099cc;
+    cursor: pointer;
+}
+
+.suporte {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.suporte svg {
+    color: #0099cc;
+}
+
+.suporte span {
+    color: #0099cc;
+    cursor: pointer;
+}
+
+.termos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #0099cc;
+    cursor: pointer;
+}
+
+.termos svg {
+    color: #0099cc;
+}
